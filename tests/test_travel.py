@@ -54,3 +54,10 @@ def test_household_ground_truth_is_the_member_sum():
     from hdsim.travel.loaders import _to_household
     rows = [{"PERSONID": 1, "CNTTDTR": 4}, {"PERSONID": 2, "CNTTDTR": 3}]
     assert _to_household("h", rows).ground_truth == 7
+
+
+def test_uses_the_travel_copb_prompt_not_another_domains():
+    """Each domain carries its own prompt. Running the wrong one is a silent wrong answer."""
+    assert "Transportation Behavioral Psychologist" in NHTS.copb_system
+    assert "{{ANCHOR}}" in NHTS.copb_system
+    assert "residential mobility" not in NHTS.copb_system.lower()

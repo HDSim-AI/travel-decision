@@ -11,6 +11,7 @@ from hdsim.core import DecisionTask, DomainConfig
 import json
 from pathlib import Path
 
+from .copb import ACTOR_SYSTEM_PROMPT, COPB_USER_TEMPLATE
 from .facts import generate_facts_list
 
 # Behavioural tendencies offered to the persona as a leaning, not a constraint. Carried over from
@@ -189,6 +190,8 @@ NHTS = DomainConfig(
     facts_fn=generate_facts_list,
     anchors=ANCHORS,
     anchor_for=anchor_for,
+    copb_system=ACTOR_SYSTEM_PROMPT,
+    copb_user=COPB_USER_TEMPLATE,
     markers=MARKERS,
     copb_fields=copb_fields,
     # Persona text is written before the household decides, so it must not state a trip count.
@@ -207,6 +210,8 @@ PUGET = DomainConfig(
     facts_fn=generate_facts_list,
     anchors=ANCHORS,
     anchor_for=anchor_for,
+    copb_system=ACTOR_SYSTEM_PROMPT,
+    copb_user=COPB_USER_TEMPLATE,
     markers=MARKERS,
     copb_fields=copb_fields,
     banned_patterns=[r"\btrips?\b"],
