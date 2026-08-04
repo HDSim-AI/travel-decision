@@ -49,6 +49,18 @@ Issues and pull requests are welcome, especially new scenarios, survey loaders, 
 skills, and evaluations. See the [organization page](https://github.com/HDSim-AI) for
 the project scope.
 
+## Citation
+
+```bibtex
+@article{sun2026pemand,
+  title   = {PEMAND: Persona-Enriched Multi-Agent Negotiation for Household Decision-Making},
+  author  = {Sun, Yuran and Sameen, Mustafa and Zhang, Yaotian and Gu, Rongguan and
+             Vibhute, Mrunal and Wu, Chia-yu and Lei, Yuanyuan and Zhao, Xilei},
+  journal = {arXiv preprint arXiv:2604.10475},
+  year    = {2026}
+}
+```
+
 ## License
 
 MIT
