@@ -168,9 +168,11 @@ NHTS = DomainConfig(
     facts_fn=generate_facts_list,
     anchors=ANCHORS,
     anchor_for=anchor_for,
-    # Persona text is written before the household decides. A persona that states a trip count has
-    # answered the question the agents are supposed to negotiate over.
-    banned_patterns=[r"\btrips?\b", r"\btravel day\b", r"\btravel diary\b"],
+    # Persona text is written before the household decides, so it must not state a trip count.
+    # This is the published pattern set and nothing more. An earlier version also banned
+    # "travel day", which rejected every real NHTS persona: TRAVDAY renders as "The day I
+    # recorded my travel was a Monday", which is survey context, not the outcome.
+    banned_patterns=[r"\btrips?\b"],
     describe_member=describe_member,
     relate_members=relate_members,
 )
@@ -182,7 +184,7 @@ PUGET = DomainConfig(
     facts_fn=generate_facts_list,
     anchors=ANCHORS,
     anchor_for=anchor_for,
-    banned_patterns=[r"\btrips?\b", r"\btravel day\b", r"\btravel diary\b"],
+    banned_patterns=[r"\btrips?\b"],
     describe_member=describe_member,
     relate_members=relate_members,
 )
