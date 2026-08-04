@@ -1,0 +1,32 @@
+[
+  {
+    "construct": "Tech-Savvy",
+    "statement": "Learning how to use new technologies is often frustrating for me. (Reverse Coded)",
+    "implication": "Adoption: High scores (disagreeing with statement) imply high PBC for app-based mobility and e-shopping substitution."
+  },
+  {
+    "construct": "Polychronic",
+    "statement": "I prefer to do one thing at a time. (Reverse Coded)",
+    "implication": "Mode Shift: High scores (disagreeing) imply tolerance for longer transit/ride-hail trips if productive; justifies complex trip chaining."
+  },
+  {
+    "construct": "Materialistic",
+    "statement": "I would/do enjoy having a lot of luxury things.",
+    "implication": "Vehicle Preference: Correlates with private vehicle usage, status-seeking travel, and potentially higher discretionary shopping generation."
+  },
+  {
+    "construct": "Pro-Car",
+    "statement": "I like the idea of driving as a means of travel for me.",
+    "implication": "Resistance: Justifies resistance to mode switching even when alternatives are available; high utility for driving."
+  },
+  {
+    "construct": "Pro-Transit",
+    "statement": "I like the idea of public transit as a means of travel for me.",
+    "implication": "Mode Choice: Increases probability of transit usage if PBC allows; justifies waiting tolerance."
+  },
+  {
+    "construct": "Wait Tolerant",
+    "statement": "I wish I could instantly be at work – the trip itself is a waste of time. (Reverse Coded)",
+    "implication": "Travel Tolerance: High scores (disagreeing) imply lower disutility of travel time; potentially longer commute acceptance."
+  }
+]

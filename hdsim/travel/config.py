@@ -8,7 +8,14 @@ from __future__ import annotations
 
 from hdsim.core import DecisionTask, DomainConfig
 
+import json
+from pathlib import Path
+
 from .facts import generate_facts_list
+
+# Behavioural tendencies offered to the persona as a leaning, not a constraint. Carried over from
+# the research pipeline so the wording is the wording the published results used.
+MARKERS = json.loads((Path(__file__).parent / "attitudinal_markers.json").read_text())
 
 # --- what is being decided ------------------------------------------------------------------------
 
@@ -160,6 +167,20 @@ def relate_members(me, other) -> str:
             else "another adult in my household")
 
 
+_ROLE_HINT = {1: "head of household", 2: "spouse/partner", 3: "child",
+              4: "parent", 5: "sibling", 6: "other relative", 7: "non-relative"}
+
+
+def copb_fields(record: dict) -> dict:
+    """Values the Chain-of-Planned-Behaviour template needs, as the research code derived them."""
+    driver = _int(record, "DRIVER")
+    return {
+        "role_hint": _ROLE_HINT.get(_int(record, "R_RELAT"), "household member"),
+        "veh_count": record.get("HHVEHCNT", "unknown"),
+        "driver_status": "yes" if driver == 1 else ("no" if driver == 2 else "unknown"),
+    }
+
+
 # --- the domain -------------------------------------------------------------------------------------
 
 NHTS = DomainConfig(
@@ -168,6 +189,8 @@ NHTS = DomainConfig(
     facts_fn=generate_facts_list,
     anchors=ANCHORS,
     anchor_for=anchor_for,
+    markers=MARKERS,
+    copb_fields=copb_fields,
     # Persona text is written before the household decides, so it must not state a trip count.
     # This is the published pattern set and nothing more. An earlier version also banned
     # "travel day", which rejected every real NHTS persona: TRAVDAY renders as "The day I
@@ -184,6 +207,8 @@ PUGET = DomainConfig(
     facts_fn=generate_facts_list,
     anchors=ANCHORS,
     anchor_for=anchor_for,
+    markers=MARKERS,
+    copb_fields=copb_fields,
     banned_patterns=[r"\btrips?\b"],
     describe_member=describe_member,
     relate_members=relate_members,
