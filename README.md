@@ -15,18 +15,33 @@ behavioral control derived from real survey data. Members propose independently,
 anchoring. They then negotiate in structured rounds while a moderator checks every turn
 for persona consistency and feasibility.
 
-## Status
-
-🚧 **Initial code release in progress.** Until it lands, the
-[live demo](https://yushundong.github.io/pemand_simulation/pemand_official_site.html)
-replays three precomputed travel scenarios in the browser with no setup required.
-
-Planned quick start:
+## Quick start
 
 ```bash
 pip install -e .
-hdsim-travel demo   # replay a real household negotiation in your terminal
+hdsim demo                        # replay a recorded negotiation, no API key needed
 ```
+
+Simulate the bundled household against a model:
+
+```bash
+cp ../hdsim/.env.example .env     # add HDSIM_API_KEY
+python examples/run_travel.py
+```
+
+```python
+from hdsim.travel import NHTS, build_personas, load_example, simulate
+
+household = load_example()
+build_personas(household, NHTS)
+simulate(household, NHTS)
+print(household.consensus_value)
+```
+
+Real data: `load_nhts("perpub.csv", min_members=2)`. NHTS 2017 is at
+<https://nhts.ornl.gov/downloads>. No survey data ships with this package.
+
+Requires [`hdsim`](https://github.com/HDSim-AI/hdsim), the method core.
 
 ## Contributing
 
