@@ -4,8 +4,7 @@
     python examples/run_travel.py        # needs HDSIM_API_KEY
 """
 
-from hdsim import build_personas, simulate
-from hdsim.travel import NHTS, load_example
+from hdsim.travel import NHTS, build_personas, load_example, simulate
 
 household = load_example()
 print(f"Household {household.household_id}: {[m.label for m in household]}")
