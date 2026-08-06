@@ -1,38 +1,21 @@
-# Contributing to HDSim
+# Contributing to `travel-decision`
 
-HDSim exists so that the next household decision use case is cheaper to build than the last one.
-Contributions that make that true are the most valuable kind.
+This repository is **one domain**. The method lives in
+[`hdsim`](https://github.com/HDSim-AI/hdsim), and the guide for adding a whole new decision is
+[there](https://github.com/HDSim-AI/hdsim/blob/main/CONTRIBUTING.md).
 
-## Ways to contribute
+**What belongs here** is anything that makes the trips domain better:
 
-| Kind | What it looks like |
+| You want to… | What that means here |
 |---|---|
-| **New decision domain** | High-value purchases, energy use, family planning, evacuation |
-| **Survey loader** | Support for another household survey or panel |
-| **Evaluation** | Baselines, ablations, or annotation protocols |
-| **Scenario** | A replayable household case for the demo |
-| **Core improvement** | Persona construction, the negotiation protocol, model backends |
+| Support another dataset | A loader for NHTS, Puget Sound or another travel survey |
+| Improve how a survey row reads | The fact translations in `facts.py` |
+| Add a replayable case | A scenario other people can run |
+| Add an evaluation | A baseline, an ablation, or a metric |
 
-## Adding a decision domain
-
-A domain is configuration, not a new pipeline. Nothing in `hdsim.core` needs to change.
-
-1. Write a `DomainConfig`. It holds what the household is deciding, how survey codes read in
-   English, the empirical anchor, and which words a persona may never use.
-2. Write a loader that turns survey rows into `Household` and `Member` objects.
-3. Set `DecisionTask.value_type`. Use `int` for a count, as travel does, or `bool` for a yes or no,
-   as residential mobility does. Both are supported and parsed differently.
-4. Set `banned_patterns` to the words that would give the answer away. Persona text is written
-   before the household decides, so a persona that states the outcome has already answered the
-   question the agents are meant to negotiate over. This is the easiest way to produce a result
-   that looks excellent and means nothing.
-5. Add `describe_member` and `relate_members` so members can be introduced to each other. Where the
-   survey does not determine a relationship, return something weaker and true rather than guessing.
-   A roster that invents a relationship causes the confusion it exists to prevent.
-6. Evaluate against at least one classical baseline. A domain without a baseline is a demo, not a
-   result.
-
-`travel-decision` is the reference implementation. Read it before starting.
+**What belongs in [`hdsim`](https://github.com/HDSim-AI/hdsim)** is anything that changes persona
+construction, the negotiation protocol, the model backends, or the metrics. Those are shared by
+every domain, so a change here would silently move the other one too.
 
 ## Data
 
