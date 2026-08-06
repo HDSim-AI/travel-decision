@@ -20,18 +20,25 @@ Household **trip planning and generation** simulated via persona-enriched multi-
 
 <img src="./docs/demo.gif" width="100%" alt="hdsim demo replaying a recorded household negotiation that settles on 4 trips">
 
-## 🧭 What can this do?
+## What this does
 
-`hdsim.travel` predicts how many trips a household makes. It reads NHTS 2017 or Puget Sound 2023
-survey rows and returns a trip count for each household, along with the conversation among the
-household members that produced it.
+Predicts how many trips a household makes. It reads NHTS 2017 or Puget Sound 2023 survey rows and
+returns a trip count for each household, with the conversation that produced it.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./docs/pipeline-travel-dark.svg">
+  <img src="./docs/pipeline-travel-light.svg" width="100%" alt="A survey record becomes personas, then independent proposals, then a moderated negotiation, then the household trip count">
+</picture>
+
+Each member becomes an agent with attitudes, subjective norms and perceived behavioral control
+taken from their own survey record. They propose independently, then negotiate in rounds while a
+moderator checks every turn for persona consistency and feasibility.
 
 | You are trying to… | What you get |
 |---|---|
-| Forecast trip generation under a new road price, fare, or transit line | Per-household trip counts under the scenario you describe |
+| Forecast trip generation under a new price, fare, or transit line | Per-household trip counts under that scenario |
 | Build travel demand inputs without fielding a new survey | Counts for the households your survey already covers |
 | Explain why a household's total is what it is | The negotiation transcript behind each number |
-| Fill in a group your survey covers thinly | Counts for those households, from the records you do have |
 
 On NHTS 2017 this brings mean absolute error from 3.07 down to 2.38 against the strongest classical
 baseline, and on Puget Sound 2023 from 2.75 to 1.99. Table 1,
@@ -43,17 +50,6 @@ baseline, and on Puget Sound 2023 from 2.75 to 1.99. Table 1,
 | Understand the method itself | [hdsim](https://github.com/HDSim-AI/hdsim) |
 | Predict whether a household moves instead | [residential-mobility](https://github.com/HDSim-AI/residential-mobility) |
 | Model a decision that is neither | [Adding a domain](https://github.com/HDSim-AI/hdsim#adding-a-domain) |
-
-## How it works
-
-```
-survey record -> theory-grounded personas -> independent proposals -> moderated negotiation -> household trip count
-```
-
-Each household member becomes an agent with attitudes, subjective norms, and perceived
-behavioral control derived from real survey data. Members propose independently, with no
-anchoring. They then negotiate in structured rounds while a moderator checks every turn
-for persona consistency and feasibility.
 
 ## Quick start
 
@@ -85,9 +81,10 @@ Requires [`hdsim`](https://github.com/HDSim-AI/hdsim), the method core.
 
 ## Contributing
 
-Issues and pull requests are welcome, especially new scenarios, survey loaders, agent
-skills, and evaluations. See the [organization page](https://github.com/HDSim-AI) for
-the project scope.
+Loaders for another travel survey, better fact translations, new scenarios and evaluations all
+belong here; see [CONTRIBUTING.md](CONTRIBUTING.md). Changes to the method itself belong in
+[`hdsim`](https://github.com/HDSim-AI/hdsim), and adding a whole new decision is
+[one file](https://github.com/HDSim-AI/hdsim/blob/main/examples/minimal_domain.py).
 
 ## Citation
 
