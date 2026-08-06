@@ -23,37 +23,46 @@ from __future__ import annotations
 
 __version__ = "0.1.0.dev0"
 
-from hdsim.core import (DecisionTask, DomainConfig, Household, Member, build_personas,
-                        enrich, negotiate, propose, simulate)
+from hdsim.core import (
+                        DecisionTask,
+                        DomainConfig,
+                        Household,
+                        Member,
+                        build_personas,
+                        enrich,
+                        negotiate,
+                        propose,
+                        simulate,
+)
 
-from .config import (NHTS, PUGET, TRIP_COUNT, anchor_for, describe_member, label_for,
-                     relate_members)
+from .config import NHTS, PUGET, TRIP_COUNT, anchor_for, describe_member, label_for, relate_members
 from .facts import generate_facts_list
 from .loaders import load_csv, load_example, load_jsonl, load_nhts, load_puget
 
+# Household, Member, DecisionTask, DomainConfig and the pipeline functions are re-exported from
+# hdsim.core, so a domain user needs one import rather than two.
 __all__ = [
-    "__version__",
-    # re-exported from hdsim.core so a domain user needs one import
-    "Household",
-    "Member",
-    "DecisionTask",
-    "DomainConfig",
-    "build_personas",
-    "enrich",
-    "propose",
-    "negotiate",
-    "simulate",
     "NHTS",
     "PUGET",
     "TRIP_COUNT",
+    "DecisionTask",
+    "DomainConfig",
+    "Household",
+    "Member",
+    "__version__",
     "anchor_for",
+    "build_personas",
     "describe_member",
-    "label_for",
-    "relate_members",
+    "enrich",
     "generate_facts_list",
+    "label_for",
     "load_csv",
+    "load_example",
+    "load_jsonl",
     "load_nhts",
     "load_puget",
-    "load_jsonl",
-    "load_example",
+    "negotiate",
+    "propose",
+    "relate_members",
+    "simulate",
 ]

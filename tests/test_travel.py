@@ -1,6 +1,6 @@
 """Travel domain tests. No API key, no network, no survey download."""
 
-from hdsim.travel import NHTS, anchor_for, generate_facts_list, label_for, load_example
+from hdsim.travel import NHTS, anchor_for, generate_facts_list, load_example
 
 
 def test_example_household_has_four_members():

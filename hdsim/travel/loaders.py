@@ -13,8 +13,8 @@ package, which is enough to see the pipeline work.
 from __future__ import annotations
 
 import json
+from collections.abc import Iterator
 from pathlib import Path
-from typing import Iterator
 
 from hdsim.core import Household, Member
 

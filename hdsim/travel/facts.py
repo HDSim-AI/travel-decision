@@ -21,7 +21,8 @@ except ImportError:  # pragma: no cover
     class _PandasShim:
         @staticmethod
         def notna(value):
-            return value is not None and value == value  # NaN is the only value unequal to itself
+            # NaN is the only value unequal to itself, which is the whole test here
+            return value is not None and value == value  # noqa: PLR0124
 
         @staticmethod
         def isna(value):
@@ -341,7 +342,7 @@ def _identity_facts(row):
 
 def _household_facts(row, ctx):
     """Role in the household, its composition, income, home and vehicles."""
-    age, relat_code, sex_raw = ctx['age'], ctx['relat_code'], ctx['sex_raw']
+    relat_code, sex_raw = ctx['relat_code'], ctx['sex_raw']
     facts = []
     # Role in household (gender-aware for clarity)
     relat_raw = _translate_value('R_RELAT', relat_code)

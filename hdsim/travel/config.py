@@ -6,10 +6,10 @@ like it does. Everything else comes from `hdsim`.
 
 from __future__ import annotations
 
-from hdsim.core import DecisionTask, DomainConfig
-
 import json
 from pathlib import Path
+
+from hdsim.core import DecisionTask, DomainConfig
 
 from .copb import ACTOR_SYSTEM_PROMPT, COPB_USER_TEMPLATE
 from .facts import generate_facts_list
