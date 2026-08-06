@@ -31,8 +31,8 @@ returns a trip count for each household, with the conversation that produced it.
 </picture>
 
 Each member becomes an agent with attitudes, subjective norms and perceived behavioral control
-taken from their own survey record. They propose independently, then negotiate in rounds while a
-moderator checks every turn for persona consistency and feasibility.
+taken from their own survey record. They propose independently, with no anchoring, then negotiate
+in moderated rounds until the household settles on one number.
 
 | You are trying to… | What you get |
 |---|---|
@@ -46,6 +46,7 @@ baseline, and on Puget Sound 2023 from 2.75 to 1.99. Table 1,
 
 | You want to… | Go to |
 |---|---|
+| See it run, with nothing installed | [Live demo](https://yushundong.github.io/pemand_simulation/pemand_official_site.html) |
 | Watch a household negotiate, with no API key | [Quick start](#quick-start) |
 | Understand the method itself | [hdsim](https://github.com/HDSim-AI/hdsim) |
 | Predict whether a household moves instead | [residential-mobility](https://github.com/HDSim-AI/residential-mobility) |
