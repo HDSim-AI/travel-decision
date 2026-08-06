@@ -2,7 +2,47 @@
 
 Household **trip planning and generation** simulated via persona-enriched multi-agent negotiation (**PEMAND**).
 
-Part of [HDSim](https://github.com/HDSim-AI) | [Live demo](https://yushundong.github.io/pemand_simulation/pemand_official_site.html) | [Paper](https://arxiv.org/abs/2604.10475)
+<p>
+<a href="https://github.com/HDSim-AI/travel-decision"><img src="https://img.shields.io/github/stars/HDSim-AI/travel-decision?style=flat-square&amp;logo=github" alt="Stars"></a>
+<a href="https://github.com/HDSim-AI/travel-decision/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/HDSim-AI/travel-decision/ci.yml?branch=main&amp;style=flat-square&amp;label=CI" alt="CI"></a>
+<a href="https://github.com/HDSim-AI/travel-decision/blob/main/pyproject.toml"><img src="https://img.shields.io/badge/python-3.10%2B-blue?style=flat-square" alt="Python 3.10+"></a>
+<a href="./LICENSE"><img src="https://img.shields.io/github/license/HDSim-AI/travel-decision?style=flat-square" alt="MIT License"></a>
+<a href="https://arxiv.org/abs/2604.10475"><img src="https://img.shields.io/badge/arXiv-2604.10475-b31b1b?style=flat-square" alt="Paper"></a>
+<a href="https://yushundong.github.io/pemand_simulation/pemand_official_site.html"><img src="https://img.shields.io/badge/Live%20Demo-HDSim-2f7d5f?style=flat-square" alt="Live Demo"></a>
+</p>
+
+<!-- Uncomment both once the package is published to PyPI:
+<a href="https://pypi.org/project/hdsim-travel/"><img src="https://img.shields.io/pypi/v/hdsim-travel?style=flat-square" alt="PyPI version"></a>
+<a href="https://pepy.tech/project/hdsim-travel"><img src="https://static.pepy.tech/badge/hdsim-travel" alt="PyPI downloads"></a>
+-->
+
+Part of the [HDSim](https://github.com/HDSim-AI) ecosystem.
+
+<img src="./docs/demo.gif" width="100%" alt="hdsim demo replaying a recorded household negotiation that settles on 4 trips">
+
+## 🧭 What can this do?
+
+`hdsim.travel` predicts how many trips a household makes. It reads NHTS 2017 or Puget Sound 2023
+survey rows and returns a trip count for each household, along with the conversation among the
+household members that produced it.
+
+| You are trying to… | What you get |
+|---|---|
+| Forecast trip generation under a new road price, fare, or transit line | Per-household trip counts under the scenario you describe |
+| Build travel demand inputs without fielding a new survey | Counts for the households your survey already covers |
+| Explain why a household's total is what it is | The negotiation transcript behind each number |
+| Fill in a group your survey covers thinly | Counts for those households, from the records you do have |
+
+On NHTS 2017 this brings mean absolute error from 3.07 down to 2.38 against the strongest classical
+baseline, and on Puget Sound 2023 from 2.75 to 1.99. Table 1,
+[arXiv:2604.10475](https://arxiv.org/abs/2604.10475).
+
+| You want to… | Go to |
+|---|---|
+| Watch a household negotiate, with no API key | [Quick start](#quick-start) |
+| Understand the method itself | [hdsim](https://github.com/HDSim-AI/hdsim) |
+| Predict whether a household moves instead | [residential-mobility](https://github.com/HDSim-AI/residential-mobility) |
+| Model a decision that is neither | [Adding a domain](https://github.com/HDSim-AI/hdsim#adding-a-domain) |
 
 ## How it works
 
