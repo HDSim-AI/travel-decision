@@ -36,7 +36,7 @@ in moderated rounds until the household settles on one number.
 
 | You are trying to… | What you get |
 |---|---|
-| Forecast trip generation under a new price, fare, or transit line | Per-household trip counts under that scenario |
+| Forecast trip generation under a new price, fare, or transit line | A trip count for each household, from its own record |
 | Build travel demand inputs without fielding a new survey | Counts for the households your survey already covers |
 | Explain why a household's total is what it is | The negotiation transcript behind each number |
 
