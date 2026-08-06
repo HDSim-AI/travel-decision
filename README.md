@@ -16,7 +16,7 @@ Household **trip planning and generation** simulated via persona-enriched multi-
 <a href="https://pepy.tech/project/hdsim-travel"><img src="https://static.pepy.tech/badge/hdsim-travel" alt="PyPI downloads"></a>
 -->
 
-Part of the [HDSim](https://github.com/HDSim-AI) ecosystem.
+**A domain package.** The method lives in [`hdsim`](https://github.com/HDSim-AI/hdsim), the core; this repository adds only the survey loaders and the configuration for one decision. [`residential-mobility`](https://github.com/HDSim-AI/residential-mobility) is the other.
 
 <img src="./docs/demo.gif" width="100%" alt="hdsim demo replaying a recorded household negotiation that settles on 4 trips">
 
