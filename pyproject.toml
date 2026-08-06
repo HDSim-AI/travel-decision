@@ -14,10 +14,12 @@ classifiers = [
     "Intended Audience :: Science/Research",
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
 ]
 dependencies = [
-    "hdsim>=0.1.0.dev0",
+    "hdsim>=0.1.0.dev0,<0.2",
     "pandas>=2.0",
 ]
 
@@ -30,7 +32,7 @@ Source = "https://github.com/HDSim-AI/travel-decision"
 Paper = "https://arxiv.org/abs/2604.10475"
 
 [tool.setuptools.packages.find]
-include = ["hdsim*"]
+include = ["hdsim.travel*"]
 
 # attitudinal_markers.json is read at import time by config.py. Without this it is left out of the
 # wheel and `import hdsim.travel` raises FileNotFoundError on a non-editable install.
