@@ -32,6 +32,11 @@ Paper = "https://arxiv.org/abs/2604.10475"
 [tool.setuptools.packages.find]
 include = ["hdsim*"]
 
+# attitudinal_markers.json is read at import time by config.py. Without this it is left out of the
+# wheel and `import hdsim.travel` raises FileNotFoundError on a non-editable install.
+[tool.setuptools.package-data]
+"hdsim.travel" = ["*.json"]
+
 [tool.ruff]
 line-length = 100
 target-version = "py310"
