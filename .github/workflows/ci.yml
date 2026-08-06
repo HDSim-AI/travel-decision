@@ -7,7 +7,10 @@ on:
   workflow_dispatch:
 
 env:
-  # hdsim is not on PyPI yet, so the method core is installed from source.
+  # hdsim is not on PyPI yet, so the method core is installed from source. Tracking main is
+  # deliberate: these packages are meant to work together, so a core change that breaks a domain
+  # should turn this red rather than wait to be discovered. Switch to a released version once
+  # hdsim is published.
   HDSIM_CORE: "hdsim @ git+https://github.com/HDSim-AI/hdsim@main"
 
 jobs:
