@@ -4,11 +4,15 @@ Household **trip planning and generation** simulated via persona-enriched multi-
 
 <p>
 <a href="https://github.com/HDSim-AI/travel-decision"><img src="https://img.shields.io/github/stars/HDSim-AI/travel-decision?style=flat-square&amp;logo=github" alt="Stars"></a>
+<a href="https://github.com/HDSim-AI/travel-decision"><img src="https://komarev.com/ghpvc/?username=HDSim-AI&amp;repo=travel-decision&amp;label=Visitors&amp;color=2f7d5f&amp;style=flat-square" alt="Visitors"></a>
 <a href="https://github.com/HDSim-AI/travel-decision/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/HDSim-AI/travel-decision/ci.yml?branch=main&amp;style=flat-square&amp;label=CI" alt="CI"></a>
 <a href="https://github.com/HDSim-AI/travel-decision/blob/main/pyproject.toml"><img src="https://img.shields.io/badge/python-3.10%2B-blue?style=flat-square" alt="Python 3.10+"></a>
 <a href="./LICENSE"><img src="https://img.shields.io/github/license/HDSim-AI/travel-decision?style=flat-square" alt="MIT License"></a>
 <a href="https://arxiv.org/abs/2604.10475"><img src="https://img.shields.io/badge/arXiv-2604.10475-b31b1b?style=flat-square" alt="Paper"></a>
 <a href="https://yushundong.github.io/pemand_simulation/pemand_official_site.html"><img src="https://img.shields.io/badge/Live%20Demo-HDSim-2f7d5f?style=flat-square" alt="Live Demo"></a>
+<!-- Uncomment once a tagged release with build artifacts exists. Until then shields renders "no releases found":
+<a href="https://github.com/HDSim-AI/travel-decision/releases"><img src="https://img.shields.io/github/downloads/HDSim-AI/travel-decision/total?style=flat-square" alt="Downloads"></a>
+-->
 </p>
 
 <!-- Uncomment both once the package is published to PyPI:
@@ -102,3 +106,13 @@ belong here; see [CONTRIBUTING.md](CONTRIBUTING.md). Changes to the method itsel
 ## License
 
 MIT
+
+## Star history
+
+<img src="docs/assets/star-history.svg" alt="Star history" width="800">
+
+<sub>Redrawn whenever someone stars the repository, by
+<a href="./.github/workflows/star-history.yml">a workflow</a> reading our own stargazer data.
+star-history.com and starchart.cc cannot chart this: GitHub restricted the stargazers timestamp
+API on 2026-06-30 to a repository's own collaborators, and their workaround is to put an access
+token in the chart URL.</sub>
